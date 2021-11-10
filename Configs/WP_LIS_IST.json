@@ -1,0 +1,134 @@
+{
+  "experiment": {
+    "name": "Pendulum",
+    "description": "<section class=\"intro\">\r\n                                    <p>\r\n                                     Esta Experiencia permite o estudo da aceleração da gravidade em diferentes pontos do globo. Para\r\n                                     este efeito pode ser usada uma constalação de vários pêndulos colocados em diferentes latitudes e \r\n                                     operados remotamente pela internet. <br> <br>\r\n                                     \r\n                                     No entanto outros protocols experimentais podem ser realizados, não só na gravidade local para ajustar \r\n                                     um modelo geofisico adequado mas também para estudar princípios mecânicos simples tais como a conservação\r\n                                     da energia mecânica.  <br><br>\r\n                                     \r\n                                     Latitudes de 50º a 0º no equador são acessiveis.\r\n                                    </p>\r\n\r\n                                </section>\r\n                                <h3> Detalhes do pêndulo</h3>\r\n                                <p>Comprimento de cabo (sem contar com a esfera):<a href=\"https://groups.ist.utl.pt/wwwelab/wiki/index.php?title=P%C3%AAndulo_Mundial#Aparato_experimental\"><em>Verifique aqui para cada lugar</em></a></p>\r\n\r\n<table id=\"example_1\" class=\"ui celled padded table\"  cellspacing=\"0\"  style=\"width:100%\">\r\n                                    <thead>\r\n                                        <tr>\r\n                                            <th>Massa da esfera</th>\r\n                                            <th>Diametro da esfera</th>\r\n                                            <th>Percurso da esfera atrtavés do laser</th>\r\n                                            <th>Constante de elasticidade</th>\r\n                                            <th>Coeficiente de expansão termica</th>\r\n                                        </tr>\r\n                                    </thead>\r\n                                    <tbody>\r\n                                        <td>2kG +/- 75G</td>\r\n                                        <td>81mm +/- 0.5mm</td>\r\n                                        <td>~81mm</td>\r\n                                        <td>200GPa</td>\r\n                                        <td>14E-6 K^-1</td>\r\n                                    </tbody>\r\n\r\n\r\n\r\n                                </table>",
+    "config": {
+      "id": "WP_LIS_IST",
+      "serial_port": {
+        "ports_restrict": [
+          "/dev/ttyAMA0"
+        ],
+        "baud": "115200",
+        "numbits": "8",
+        "stopbits": "1",
+        "partitybits": "0",
+        "listening_timeout": "100000",
+        "death_timeout": "10000000"
+      },
+      "protocols": [
+        {
+          "exp_paremeters": [
+            {
+              "step": "1",
+              "nome": "DeltaX",
+              "start": 10,
+              "min_val": "3",
+              "max_val": "22"
+            },
+            {
+              "step": "1",
+              "nome": "Samples",
+              "start": 50,
+              "min_val": "2",
+              "max_val": "500"
+            }
+          ],
+          "measurement_channels": {
+            "num_channels": "5",
+            "channel_format": [
+              "####",
+              "###.####",
+              "###.####",
+              "###.####",
+              "##.#"
+            ]
+          },
+          "timeout": {
+            "default": "45000",
+            "id": "10000",
+            "cfg": "80000",
+            "cur": "5000",
+            "str": "60000",
+            "data_bin": "120000",
+            "no_data": "60000",
+            "end": "3000000",
+            "stp": "180000",
+            "rst": "180000"
+          }
+        },
+        {
+          "exp_paremeters": [
+            {
+              "step": "1",
+              "min_val": "5",
+              "max_val": "14"
+            },
+            {
+              "step": "1",
+              "min_val": "10",
+              "max_val": "50"
+            }
+          ],
+          "measurement_channels": {
+            "num_channels": "5",
+            "channel_format": [
+              "####",
+              "###.####",
+              "###.####",
+              "###.####",
+              "##.#"
+            ]
+          },
+          "timeout": {
+            "default": "45000",
+            "id": "10000",
+            "cfg": "80000",
+            "cur": "5000",
+            "str": "60000",
+            "data_bin": "120000",
+            "no_data": "60000",
+            "end": "3000000",
+            "stp": "180000",
+            "rst": "180000"
+          }
+        }
+      ],
+      "errors": [
+        "Something wrong happened !",
+        "Sensor has failed.",
+        "Value out of range..."
+      ]
+    },
+    "scientific_area": "Physics - Mechanics",
+    "lab_type": "Test lab type"
+  },
+  "protocols": [
+    {
+      "name": "Pendulum BPlasma",
+      "config": {
+        "type": "object",
+        "properties": {
+          "deltaX": {
+            "type": "integer",
+            "minimum": 3,
+            "maximum": 22,
+            "multipleOf": 1
+          },
+          "samples": {
+            "type": "integer",
+            "minimum": 4,
+            "maximum": 500,
+            "multipleOf": 1
+          }
+        },
+        "required": [
+          "deltaX",
+          "samples"
+        ]
+      }
+    }
+  ],
+  "location": "Lisbon",
+  "owner": "BeamPlasma",
+  "video_config": null
+}
