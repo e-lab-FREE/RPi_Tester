@@ -13,7 +13,7 @@ from flask import Flask, request, jsonify, session, Response, render_template
 FORMAT = 'utf-8'
 LIST_C_E = {}
 i=0
-apparatus = ["Other","Other","Other","Other","WP_LIS_IST","Other"]
+apparatus = ["Other","WP_LIS_IST","Other","Other","Other","Other"]
 result_id_save=0
 RESULTS = []
 
