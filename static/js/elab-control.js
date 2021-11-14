@@ -1,6 +1,6 @@
 var base_url = "http://10.2.12.86:8000";
-var apparatus = 4
-var protocol = 5
+var apparatus = 1
+var protocol = 1
 let Results=0;
 var DeltaX=0;
 var Samples=0;
